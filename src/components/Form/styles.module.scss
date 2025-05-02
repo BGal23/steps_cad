@@ -2,8 +2,23 @@
   display: flex;
   flex-direction: column;
   gap: 0.5em;
+  width: 300px;
+
+  & label {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+  }
 
   & span {
     margin-right: 0.5em;
+  }
+
+  & input {
+    width: 100px;
+  }
+
+  & select {
+    width: 108px;
   }
 }

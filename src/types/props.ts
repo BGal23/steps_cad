@@ -1,4 +1,4 @@
-import { ISettings } from "./settings";
+import { IData, ISettings, TView } from "./other";
 
 export interface IForm {
   settings: ISettings[];
@@ -7,4 +7,10 @@ export interface IForm {
 
 export interface IDraw {
   settings: ISettings[];
+  view: TView;
+  setView: (view: TView) => void;
+}
+
+export interface IAllDraw {
+  data: IData;
 }

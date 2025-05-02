@@ -21,7 +21,7 @@ const Form: React.FC<IForm> = ({ settings, setSettings }) => {
               <span>{element.name}</span>
               {element.select ? (
                 <select
-                  name={`select-${element.name}`}
+                  name={`select-from-${element.name}`}
                   value={element.value}
                   onChange={(event) =>
                     handleChange(element.id, event.target.value)
@@ -35,7 +35,7 @@ const Form: React.FC<IForm> = ({ settings, setSettings }) => {
                 </select>
               ) : (
                 <input
-                  name={`input-${element.name}`}
+                  name={`input-from-${element.name}`}
                   value={element.value}
                   type={element.type}
                   onChange={(event) =>
