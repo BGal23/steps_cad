@@ -5,15 +5,9 @@ import React from "react";
 import TopDraw from "./TopDraw";
 import SideDraw from "./SideDraw";
 import FrontDraw from "./FrontDraw";
+import stairCalc from "../../logic/stairCalc";
 
-const Draw: React.FC<IDraw> = ({ settings, view, setView }) => {
-  const data = settings.reduce((acc, { key, value }) => {
-    if (key) {
-      acc[key as keyof IData] = value as never;
-    }
-    return acc;
-  }, {} as IData);
-
+const Draw: React.FC<IDraw> = ({ data, view, setView }) => {
   const currentView = (view: TView) => {
     switch (view) {
       case "top":
@@ -30,6 +24,8 @@ const Draw: React.FC<IDraw> = ({ settings, view, setView }) => {
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setView(e.target.value as TView);
   };
+
+  const newData: IData | null = stairCalc(data);
 
   return (
     <>
@@ -49,9 +45,16 @@ const Draw: React.FC<IDraw> = ({ settings, view, setView }) => {
         ))}
       </form>
       <br />
-      <svg viewBox={`0 0 ${data.width} ${data.height}`}>
-        {currentView(view)}
-      </svg>
+      {newData && (
+        <svg
+          style={{ zoom: 0.2 }}
+          // viewBox={`0 0 ${data.width} ${data.height}`}
+          width={newData.stairLength + newData.stepOverlapping}
+          height={newData.width}
+        >
+          {currentView(view)}
+        </svg>
+      )}
     </>
   );
 };

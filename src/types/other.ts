@@ -5,14 +5,20 @@ export interface ISettings {
   select: boolean;
   type?: string;
   options?: IOptions[];
-  value: number | string | boolean;
+  value: number | string;
   isActive: boolean;
+  dependsOn?: IDependsOn;
 }
 
 export interface IOptions {
   id: number;
   name: string;
-  value: "I" | "L" | "U" | boolean;
+  value: string;
+}
+
+export interface IDependsOn {
+  key: string;
+  value: string;
 }
 
 export interface IView {
@@ -24,12 +30,20 @@ export interface IView {
 
 export interface IData {
   height: number;
-  layout: string;
-  riserThickness: number;
-  risers: boolean;
-  stepThickness: number;
-  stringerThickness: number;
   width: number;
+  layout: "I" | "L" | "U";
+  stringerThickness: number;
+  stepThickness: number;
+  risers: boolean;
+  riserThickness: number;
+  stepWidth: number;
+  stepOverlapping: number;
+  stepIssuance: number;
+  stepLast: boolean;
+  stringerType: boolean;
+  stepsNumber: number;
+  stepHeight: number;
+  stairLength: number;
 }
 
 export type TView = "front" | "side" | "top";
