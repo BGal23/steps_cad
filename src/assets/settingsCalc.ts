@@ -2,7 +2,7 @@ import { ISettings } from "../types/other";
 
 const settingsCompletionArray: ISettings[] = [
   {
-    id: 13,
+    id: 100,
     name: "Ilość Stopni",
     key: "stepsNumber",
     select: false,
@@ -11,7 +11,7 @@ const settingsCompletionArray: ISettings[] = [
     isActive: true,
   },
   {
-    id: 14,
+    id: 101,
     name: "Wysokość Stopnia",
     key: "stepHeight",
     select: false,
@@ -20,7 +20,7 @@ const settingsCompletionArray: ISettings[] = [
     isActive: true,
   },
   {
-    id: 15,
+    id: 102,
     name: "Długość schodów",
     key: "stairLength",
     select: false,

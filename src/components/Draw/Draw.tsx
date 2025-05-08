@@ -49,8 +49,8 @@ const Draw: React.FC<IDraw> = ({ data, view, setView }) => {
         <svg
           style={{ zoom: 0.2 }}
           // viewBox={`0 0 ${data.width} ${data.height}`}
-          width={newData.stairLength + newData.stepOverlapping}
-          height={newData.width}
+          width={4000}
+          height={2000}
         >
           {currentView(view)}
         </svg>

@@ -16,6 +16,8 @@ const createData = (settings: ISettings[]) => {
     return acc;
   }, {} as IData);
 
+  data.start = { x: 50, y: 50 };
+
   return data;
 };
 

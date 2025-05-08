@@ -61,6 +61,7 @@ const settingsArray: ISettings[] = [
     ],
     value: "false",
     isActive: true,
+    dependsOn: [{ key: "stringerType", value: "letIn" }],
   },
   {
     id: 6,
@@ -70,7 +71,10 @@ const settingsArray: ISettings[] = [
     type: "number",
     value: 20,
     isActive: true,
-    dependsOn: { key: "risers", value: "true" },
+    dependsOn: [
+      { key: "risers", value: "true" },
+      { key: "stringerType", value: "letIn" },
+    ],
   },
   {
     id: 7,
@@ -110,7 +114,7 @@ const settingsArray: ISettings[] = [
     type: "number",
     value: 80,
     isActive: true,
-    dependsOn: { key: "stringerType", value: "under" },
+    dependsOn: [{ key: "stringerType", value: "under" }],
   },
   {
     id: 11,
@@ -120,7 +124,7 @@ const settingsArray: ISettings[] = [
     type: "number",
     value: 15,
     isActive: true,
-    dependsOn: { key: "stringerType", value: "letIn" },
+    dependsOn: [{ key: "stringerType", value: "letIn" }],
   },
   {
     id: 12,
@@ -132,6 +136,24 @@ const settingsArray: ISettings[] = [
       { id: 2, value: "false", name: "Nie" },
     ],
     value: "true",
+    isActive: true,
+  },
+  {
+    id: 13,
+    name: "Początek Wangi",
+    key: "stringerStart",
+    select: false,
+    type: "number",
+    value: -30,
+    isActive: true,
+  },
+  {
+    id: 14,
+    name: "Koniec Wangi",
+    key: "stringerStop",
+    select: false,
+    type: "number",
+    value: 0,
     isActive: true,
   },
 ];

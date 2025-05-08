@@ -7,9 +7,13 @@ const InputForm: React.FC<IInputForm> = ({
   handleChange,
 }) => {
   const evaluateIsActive = (element: ISettings, settings: ISettings[]) => {
-    if (!element.dependsOn) return element.isActive;
-    const dependent = settings.find((e) => e.key === element.dependsOn?.key);
-    return dependent?.value === element.dependsOn.value;
+    if (!element.dependsOn || element.dependsOn.length === 0)
+      return element.isActive;
+
+    return element.dependsOn.every((dep) => {
+      const dependent = settings.find((e) => e.key === dep.key);
+      return dependent?.value === dep.value;
+    });
   };
 
   const active = evaluateIsActive(element, settings);
